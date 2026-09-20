@@ -15,16 +15,16 @@ export default function BeforeAfterSlider({
   beforeImage,
   afterImage,
 }) {
-  const [pos, setPos] = useState(52);
-  const [dragging, setDragging] = useState(false);
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [slides, setSlides] = useState([{ before: beforeImage, after: afterImage }]);
+  const [frames, setFrames] = useState([
+    { src: beforeImage, label: 'Before' },
+    { src: afterImage, label: 'After' },
+  ]);
+  const [activeFrame, setActiveFrame] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const wrapRef = useRef(null);
   const showcaseRef = useRef(null);
 
   useEffect(() => {
-    const numberedSlides = Array.from({ length: NUMBERED_SLIDES_TO_CHECK }, (_, index) => {
+    const numberedPairs = Array.from({ length: NUMBERED_SLIDES_TO_CHECK }, (_, index) => {
       const number = index + 1;
       return {
         before: `/images/before-${number}.jpeg`,
@@ -33,12 +33,21 @@ export default function BeforeAfterSlider({
     });
 
     let cancelled = false;
-    Promise.all(numberedSlides.map(async (slide) => (
-      (await Promise.all([loadImage(slide.before), loadImage(slide.after)]).then(([before, after]) => before && after))
-        ? slide
+    Promise.all(numberedPairs.map(async (pair) => (
+      (await Promise.all([loadImage(pair.before), loadImage(pair.after)]).then(([before, after]) => before && after))
+        ? pair
         : null
-    ))).then((foundSlides) => {
-      if (!cancelled) setSlides([{ before: beforeImage, after: afterImage }, ...foundSlides.filter(Boolean)]);
+    ))).then((foundPairs) => {
+      if (cancelled) return;
+      const numberedFrames = foundPairs.filter(Boolean).flatMap((pair) => [
+        { src: pair.before, label: 'Before' },
+        { src: pair.after, label: 'After' },
+      ]);
+      setFrames([
+        { src: beforeImage, label: 'Before' },
+        { src: afterImage, label: 'After' },
+        ...numberedFrames,
+      ]);
     });
 
     return () => { cancelled = true; };
@@ -51,104 +60,41 @@ export default function BeforeAfterSlider({
   }, []);
 
   useEffect(() => {
-    if (!isVisible || slides.length < 2) return undefined;
+    if (!isVisible || frames.length < 2) return undefined;
     const timer = window.setInterval(() => {
-      setActiveSlide((current) => (current + 1) % slides.length);
-      setPos(52);
-    }, 7000);
+      setActiveFrame((current) => (current + 1) % frames.length);
+    }, 5500);
     return () => window.clearInterval(timer);
-  }, [isVisible, slides.length]);
+  }, [isVisible, frames.length]);
 
-  const setFromClientX = (clientX) => {
-    const rect = wrapRef.current.getBoundingClientRect();
-    let pct = ((clientX - rect.left) / rect.width) * 100;
-    pct = Math.max(2, Math.min(98, pct));
-    setPos(pct);
-  };
-
-  const onPointerDown = (event) => {
-    setDragging(true);
-    wrapRef.current.setPointerCapture(event.pointerId);
-    setFromClientX(event.clientX);
-  };
-  const onPointerMove = (event) => dragging && setFromClientX(event.clientX);
-  const onPointerUp = () => setDragging(false);
-
-  const onKeyDown = (event) => {
-    let next = pos;
-    if (event.key === 'ArrowLeft') next = pos - 4;
-    if (event.key === 'ArrowRight') next = pos + 4;
-    if (event.key === 'Home') next = 2;
-    if (event.key === 'End') next = 98;
-    if (next !== pos) {
-      event.preventDefault();
-      setPos(Math.max(2, Math.min(98, next)));
-    }
-  };
-
-  const showNext = () => {
-    setActiveSlide((current) => (current + 1) % slides.length);
-    setPos(52);
-  };
-  const currentSlide = slides[activeSlide] || slides[0];
+  const showNext = () => setActiveFrame((current) => (current + 1) % frames.length);
+  const currentFrame = frames[activeFrame] || frames[0];
 
   return (
     <div className="ba-wrap" ref={showcaseRef}>
       <div className="ba-showcase-head">
         <span className="eyebrow">See the difference</span>
-        <strong>Swipe through our work</strong>
+        <strong>Recent work, one step at a time</strong>
       </div>
 
       <div className="ba-card">
-        <div
-          className="ba"
-          ref={wrapRef}
-          style={{ '--pos': `${pos}%` }}
-          onPointerDown={onPointerDown}
-          onPointerMove={onPointerMove}
-          onPointerUp={onPointerUp}
-          onPointerCancel={onPointerUp}
-        >
-          <div className="ba-layer ba-after">
-            <img key={currentSlide.after} src={currentSlide.after} alt={`${title} after`} className="ba-img" />
-          </div>
-          <div className="ba-layer ba-before">
-            <img key={currentSlide.before} src={currentSlide.before} alt={`${title} before`} className="ba-img" />
-          </div>
+        <div className="ba ba-slideshow" aria-live="polite">
+          <img key={currentFrame.src} src={currentFrame.src} alt={`${title} ${currentFrame.label.toLowerCase()}`} className="ba-slide-img" />
+          <span className={`ba-tag ba-tag--${currentFrame.label.toLowerCase()}`}>{currentFrame.label}</span>
+        </div>
+      </div>
 
-          <span className="ba-tag ba-tag--l">Before</span>
-          <span className="ba-tag ba-tag--r">After</span>
-
-          <div
-            className="ba-handle"
-            tabIndex={0}
-            role="slider"
-            aria-label="Drag to compare before and after"
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-valuenow={Math.round(pos)}
-            onKeyDown={onKeyDown}
-          >
-            <span className="ba-knob">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M9 7l-5 5 5 5M15 7l5 5-5 5" />
-              </svg>
-            </span>
-          </div>
-
-          <div className="ba-caption">
-            <div>
-              <strong>{title}</strong>
-              <span>{meta} · Drag to compare</span>
-            </div>
-          </div>
+      <div className="ba-caption ba-caption--below">
+        <div>
+          <strong>{title}</strong>
+          <span>{meta}</span>
         </div>
       </div>
 
       <div className="ba-controls">
-        <span>{slides.length > 1 ? `Project ${activeSlide + 1} of ${slides.length}` : 'Featured project'}</span>
-        <button type="button" className="ba-next" onClick={showNext} aria-label="Show next project">
-          Next project
+        <span>{currentFrame.label} · Image {activeFrame + 1} of {frames.length}</span>
+        <button type="button" className="ba-next" onClick={showNext} aria-label="Show next image">
+          Next image
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M5 12h14M13 6l6 6-6 6" />
           </svg>
