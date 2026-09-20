@@ -1,5 +1,5 @@
 import { site } from '../data/site';
-import { IconLogo, IconPhone, IconMail, IconPin, IconClock, IconShield } from './Icons';
+import { IconLogo, IconPhone, IconMail, IconPin, IconClock, IconShield, IconWhatsApp } from './Icons';
 
 export default function Footer() {
   return (
@@ -39,7 +39,7 @@ export default function Footer() {
               <li><a href="#process">Our Process</a></li>
               <li><a href="#areas">Service Areas</a></li>
               <li><a href="#faq">FAQ</a></li>
-              <li><a href="#estimate">Free Estimate</a></li>
+              <li><a href="#estimate">Free Quote</a></li>
             </ul>
           </div>
 
@@ -47,6 +47,7 @@ export default function Footer() {
             <h4>Get in touch</h4>
             <ul className="footer-contact">
               <li><IconPhone /><a href={site.phoneHref}>{site.phone}</a></li>
+              <li><IconWhatsApp /><a href={site.whatsappHref} target="_blank" rel="noreferrer">Chat on WhatsApp</a></li>
               <li><IconMail /><a href={site.emailHref}>{site.email}</a></li>
               <li><IconPin /><span>{site.address}</span></li>
               <li><IconClock /><span>{site.hours}</span></li>

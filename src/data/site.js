@@ -5,6 +5,7 @@ export const site = {
   tagline: 'Professional Painting Contractors',
   phone: '+254 723702143',
   phoneHref: 'tel:+254723702143',
+  whatsappHref: 'https://wa.me/254723702143?text=Hello%20ICEARK%2C%20I%27d%20like%20a%20free%20painting%20quote.',
   email: 'iceosphere@gmail.com',
   emailHref: 'mailto:iceosphere@gmail.com',
   hours: 'Sun–Fri · 7:00am – 6:00pm',

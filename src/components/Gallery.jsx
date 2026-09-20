@@ -72,6 +72,7 @@ export default function Gallery() {
                 </div>
                 <div className="work-body">
                   <h3>{p.title}</h3>
+                  <p className="work-result">{p.result}</p>
                   <ul className="work-meta">
                     <li><IconPin /> {p.location}</li>
                     <li><IconClock /> {p.duration}</li>

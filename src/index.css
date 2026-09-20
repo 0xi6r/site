@@ -53,6 +53,9 @@ section{scroll-margin-top:96px;}
 .btn-lg{padding:1rem 1.75rem;font-size:1rem;}
 .btn-accent{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(242,129,29,.32);}
 .btn-accent:hover{background:var(--accent-dark);box-shadow:0 10px 26px rgba(242,129,29,.4);}
+.btn-whatsapp{background:#1FAF61;color:#fff;box-shadow:0 6px 18px rgba(31,175,97,.24);}
+.btn-whatsapp:hover{background:#168F4E;box-shadow:0 10px 26px rgba(31,175,97,.34);}
+.btn-whatsapp svg{width:17px;height:17px;stroke:currentColor;}
 .btn-outline{border-color:var(--line-dark);color:var(--ink);background:#fff;}
 .btn-outline:hover{border-color:var(--ink);background:var(--ink);color:#fff;}
 .btn-dark{background:var(--navy);color:#fff;}
@@ -176,8 +179,23 @@ section{scroll-margin-top:96px;}
 .ba-showcase-head .eyebrow{font-size:.72rem;}
 .ba-showcase-head strong{font-family:'Archivo',sans-serif;font-size:1rem;color:var(--navy);}
 .ba-card{position:relative;border-radius:calc(var(--radius) + 6px);overflow:hidden;box-shadow:none;background:#000;border:6px solid #fff;}
-.ba{position:relative;aspect-ratio:4/3.15;overflow:hidden;background:#f1f1f1;}
-.ba-slide-img{display:block;width:100%;height:100%;object-fit:cover;animation:ba-fade-in .45s ease both;}
+.ba{position:relative;aspect-ratio:4/3.15;overflow:hidden;background:#f1f1f1;cursor:ew-resize;touch-action:none;user-select:none;}
+.ba-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.ba-before{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--ba-position)) 0 0);}
+.ba-handle{
+  position:absolute;top:0;bottom:0;left:var(--ba-position);z-index:4;width:3px;
+  transform:translateX(-50%);background:#fff;box-shadow:0 0 0 1px rgba(12,26,43,.22),0 0 18px rgba(12,26,43,.28);
+}
+.ba-handle::after{
+  content:"";position:absolute;left:50%;top:50%;width:42px;height:42px;border-radius:50%;
+  transform:translate(-50%,-50%);background:#fff;
+  box-shadow:0 8px 22px rgba(12,26,43,.25);
+}
+.ba-handle::before{
+  content:"";position:absolute;left:50%;top:50%;z-index:1;width:16px;height:16px;
+  transform:translate(-50%,-50%) rotate(45deg);border-left:3px solid var(--accent);border-bottom:3px solid var(--accent);
+}
+.ba-range{position:absolute;inset:0;z-index:5;width:100%;height:100%;opacity:0;cursor:ew-resize;}
 @keyframes ba-fade-in{from{opacity:.35;}to{opacity:1;}}
 
 .ba-tag{
@@ -268,6 +286,7 @@ section{scroll-margin-top:96px;}
 }
 .work-body{padding:1.25rem 1.35rem 1.45rem;}
 .work-body h3{font-size:1.05rem;margin-bottom:.35rem;}
+.work-result{font-size:.9rem;color:var(--navy-600);line-height:1.55;margin-bottom:.85rem;}
 .work-meta{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.8rem;color:var(--muted);font-weight:600;}
 .work-meta li{display:flex;align-items:center;gap:.35rem;}
 .work-meta svg{width:13px;height:13px;stroke:currentColor;}
@@ -431,7 +450,7 @@ section{scroll-margin-top:96px;}
   padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom));
   gap:.6rem;
 }
-.mobile-bar .btn{flex:1;padding:.75rem 1rem;font-size:.9rem;}
+.mobile-bar .btn{flex:1;min-width:0;padding:.75rem .55rem;font-size:.82rem;}
 
 /* ============================================================
    16. RESPONSIVE

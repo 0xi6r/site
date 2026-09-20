@@ -17,6 +17,13 @@ export const IconMail = (p) => (
   </svg>
 );
 
+export const IconWhatsApp = (p) => (
+  <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" {...p}>
+    <path d="M5.2 19.1l.9-3.2a8 8 0 1 1 3 2.9z" />
+    <path d="M9.5 8.8c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.6 1.4c.1.3.1.5-.1.7l-.4.5c.6 1 1.4 1.8 2.5 2.3l.6-.7c.2-.2.4-.2.7-.1l1.4.7c.3.1.4.3.4.6v.5c0 .3-.2.6-.5.8-.5.3-1.3.5-2.4.1-2.3-.7-4.6-3-5.3-5.3-.3-.8-.1-1.3.3-1.5z" />
+  </svg>
+);
+
 export const IconClock = (p) => (
   <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" {...p}>
     <circle cx="12" cy="12" r="9" />

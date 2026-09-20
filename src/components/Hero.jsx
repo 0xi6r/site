@@ -1,6 +1,6 @@
 import { site } from '../data/site';
 import BeforeAfterSlider from './BeforeAfterSlider';
-import { IconCheck } from './Icons';
+import { IconCheck, IconWhatsApp } from './Icons';
 
 export default function Hero() {
   return (
@@ -19,7 +19,10 @@ export default function Hero() {
           </p>
 
           <div className="hero-cta">
-            <a className="btn btn-accent btn-lg" href="#estimate">Get a Free Estimate</a>
+            <a className="btn btn-accent btn-lg" href="#estimate">Get a Free Quote</a>
+            <a className="btn btn-whatsapp btn-lg" href={site.whatsappHref} target="_blank" rel="noreferrer">
+              <IconWhatsApp /> WhatsApp Us
+            </a>
             <a className="btn btn-outline btn-lg" href={site.phoneHref}>Call {site.phone}</a>
           </div>
 

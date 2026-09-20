@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { site } from '../data/site';
-import { IconCheck, IconPhone, IconMail, IconClock } from './Icons';
+import { IconCheck, IconPhone, IconMail, IconClock, IconWhatsApp } from './Icons';
 
 export default function Estimate() {
   const [sending, setSending] = useState(false);
@@ -11,13 +11,14 @@ export default function Estimate() {
     if (!e.currentTarget.checkValidity()) { e.currentTarget.reportValidity(); return; }
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
-    const subject = encodeURIComponent(`Estimate request from ${data.name}`);
+    const subject = encodeURIComponent(`Quote request from ${data.name}`);
     const body = encodeURIComponent([
-      'New painting estimate request',
+      'New painting quote request',
       '',
       `Name: ${data.name}`,
       `Phone: ${data.phone}`,
       `Email: ${data.email}`,
+      `Preferred contact: ${data.contactMethod}`,
       `Address / city: ${data.address || 'Not provided'}`,
       `Service: ${data.service}`,
       `Timeline: ${data.timeline || 'Not provided'}`,
@@ -40,7 +41,7 @@ export default function Estimate() {
     <section className="section estimate" id="estimate">
       <div className="container estimate-grid">
         <div>
-          <span className="eyebrow">Free estimate</span>
+          <span className="eyebrow">Free quote</span>
           <h2 style={{ marginTop: '.8rem' }}>Get your written quote in 24 hours</h2>
           <p className="estimate-lead">
             Tell us about your project and we'll schedule a free on-site visit.
@@ -48,21 +49,21 @@ export default function Estimate() {
           </p>
 
           <ul className="estimate-points">
-            <li><IconCheck /> Free on-site measurement &amp; surface inspection</li>
-            <li><IconCheck /> Written, itemized quote — no hidden fees</li>
-            <li><IconCheck /> Licensed, insured, background-checked crews</li>
-            <li><IconCheck /> 5-year workmanship warranty on every job</li>
+            <li><IconCheck /> Share the space, surface condition, and timing you have in mind.</li>
+            <li><IconCheck /> Send photos on WhatsApp for a faster first read.</li>
+            <li><IconCheck /> We confirm scope, prep needs, schedule, and your written quote.</li>
           </ul>
 
           <div className="estimate-contact">
             <a href={site.phoneHref}><IconPhone /> {site.phone}</a>
+            <a href={site.whatsappHref} target="_blank" rel="noreferrer"><IconWhatsApp /> Chat on WhatsApp</a>
             <a href={site.emailHref}><IconMail /> {site.email}</a>
             <a href="#"><IconClock /> {site.hours}</a>
           </div>
         </div>
 
         <div className="form-card">
-          <h3>Request your free estimate</h3>
+          <h3>Request your free quote</h3>
           <p>Takes about 60 seconds. We'll call you within one business day.</p>
 
           <form onSubmit={handleSubmit} noValidate>
@@ -80,6 +81,15 @@ export default function Estimate() {
             <div className="field">
               <label htmlFor="email">Email address <span className="req">*</span></label>
               <input id="email" name="email" type="email" placeholder="jane@example.com" required />
+            </div>
+
+            <div className="field">
+              <label htmlFor="contactMethod">Preferred contact <span className="req">*</span></label>
+              <select id="contactMethod" name="contactMethod" required defaultValue="WhatsApp">
+                <option>WhatsApp</option>
+                <option>Phone call</option>
+                <option>Email</option>
+              </select>
             </div>
 
             <div className="field">
@@ -118,13 +128,13 @@ export default function Estimate() {
               <textarea
                 id="details"
                 name="details"
-                placeholder="e.g. 3 bedrooms, hallway and stairwell. Some drywall cracks in the hallway ceiling."
+                placeholder="e.g. 3 bedrooms, hallway and stairwell. You can also send photos on WhatsApp after submitting."
               />
             </div>
 
             <label className="form-consent">
               <input name="consent" type="checkbox" required />
-              <span>I agree to be contacted about my estimate request. We never share your information.</span>
+              <span>I agree to be contacted about my quote request. We never share your information.</span>
             </label>
 
             <button
@@ -135,7 +145,7 @@ export default function Estimate() {
             >
               {sent ? "✓ Request Sent — We'll Call You Soon"
                : sending ? 'Sending…'
-               : 'Request My Free Estimate'}
+               : 'Request My Free Quote'}
             </button>
             <p className="form-status" aria-live="polite">
               {sent ? 'Your email app should open with the request filled in.' : ''}
