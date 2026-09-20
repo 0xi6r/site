@@ -3,8 +3,8 @@ import { site } from '../data/site';
 import { IconLogo, IconPhone } from './Icons';
 
 const NAV = [
-  { href: '#services', label: 'Services' },
   { href: '#work',     label: 'Our Work' },
+  { href: '#services', label: 'Services' },
   { href: '#process',  label: 'Process' },
   { href: '#areas',    label: 'Service Areas' },
   { href: '#faq',      label: 'FAQ' },
