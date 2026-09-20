@@ -1,7 +1,6 @@
 const STATS = [
   { num: '2,400+', lbl: 'Projects completed' },
   { num: '20+',    lbl: 'Years in business' },
-  { num: '4.9★',   lbl: '380+ verified reviews' },
   { num: '5 yr',   lbl: 'Workmanship warranty' },
 ];
 

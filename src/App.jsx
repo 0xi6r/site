@@ -6,7 +6,6 @@ import Services from './components/Services';
 import Gallery from './components/Gallery';
 import Process from './components/Process';
 import Stats from './components/Stats';
-import Reviews from './components/Reviews';
 import Areas from './components/Areas';
 import FAQ from './components/FAQ';
 import Estimate from './components/Estimate';
@@ -25,7 +24,6 @@ export default function App() {
         <Gallery />
         <Process />
         <Stats />
-        <Reviews />
         <Areas />
         <FAQ />
         <Estimate />

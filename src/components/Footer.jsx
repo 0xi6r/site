@@ -37,7 +37,6 @@ export default function Footer() {
             <ul className="footer-links">
               <li><a href="#work">Our Work</a></li>
               <li><a href="#process">Our Process</a></li>
-              <li><a href="#reviews">Reviews</a></li>
               <li><a href="#areas">Service Areas</a></li>
               <li><a href="#faq">FAQ</a></li>
               <li><a href="#estimate">Free Estimate</a></li>

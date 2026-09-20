@@ -9,12 +9,30 @@ export default function Estimate() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!e.currentTarget.checkValidity()) { e.currentTarget.reportValidity(); return; }
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form).entries());
+    const subject = encodeURIComponent(`Estimate request from ${data.name}`);
+    const body = encodeURIComponent([
+      'New painting estimate request',
+      '',
+      `Name: ${data.name}`,
+      `Phone: ${data.phone}`,
+      `Email: ${data.email}`,
+      `Address / city: ${data.address || 'Not provided'}`,
+      `Service: ${data.service}`,
+      `Timeline: ${data.timeline || 'Not provided'}`,
+      '',
+      'Project details:',
+      data.details || 'Not provided',
+    ].join('\n'));
+
     setSending(true);
     setTimeout(() => {
       setSending(false);
       setSent(true);
+      window.location.href = `${site.emailHref}?subject=${subject}&body=${body}`;
       setTimeout(() => setSent(false), 3200);
-      e.target.reset();
+      form.reset();
     }, 900);
   };
 
@@ -105,7 +123,7 @@ export default function Estimate() {
             </div>
 
             <label className="form-consent">
-              <input type="checkbox" required />
+              <input name="consent" type="checkbox" required />
               <span>I agree to be contacted about my estimate request. We never share your information.</span>
             </label>
 
@@ -119,6 +137,9 @@ export default function Estimate() {
                : sending ? 'Sending…'
                : 'Request My Free Estimate'}
             </button>
+            <p className="form-status" aria-live="polite">
+              {sent ? 'Your email app should open with the request filled in.' : ''}
+            </p>
             <p className="form-note">🔒 Your information is safe. No spam, ever.</p>
           </form>
         </div>
