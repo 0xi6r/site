@@ -39,7 +39,7 @@ export default function Footer() {
               <li><a href="#process">Our Process</a></li>
               <li><a href="#areas">Service Areas</a></li>
               <li><a href="#faq">FAQ</a></li>
-              <li><a href="#estimate">Free Quote</a></li>
+              <li><a href="#estimate">Get Quote</a></li>
             </ul>
           </div>
 

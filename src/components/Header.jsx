@@ -37,7 +37,7 @@ export default function Header() {
             <a key={href} href={href} onClick={() => setNavOpen(false)}>{label}</a>
           ))}
           <a className="btn btn-accent nav-cta" href="#estimate" onClick={() => setNavOpen(false)}>
-            Get a Free Quote
+            Get Quote
           </a>
         </nav>
 
@@ -45,7 +45,7 @@ export default function Header() {
           <a className="btn-phone" href={site.phoneHref}>
             <IconPhone /> {site.phone}
           </a>
-          <a className="btn btn-accent" href="#estimate">Free Quote</a>
+          <a className="btn btn-accent" href="#estimate">Get Quote</a>
           <button
             className={`burger${navOpen ? ' is-open' : ''}`}
             aria-label="Toggle menu"

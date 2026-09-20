@@ -41,8 +41,8 @@ export default function Estimate() {
     <section className="section estimate" id="estimate">
       <div className="container estimate-grid">
         <div>
-          <span className="eyebrow">Free quote</span>
-          <h2 style={{ marginTop: '.8rem' }}>Get your written quote in 24 hours</h2>
+          <span className="eyebrow">Get quote</span>
+          <h2 style={{ marginTop: '.8rem' }}>Get a written quote in 24 hours</h2>
           <p className="estimate-lead">
             Tell us about your project and we'll schedule a free on-site visit.
             No pressure, no pushy sales — just an honest, itemized number.
@@ -63,7 +63,7 @@ export default function Estimate() {
         </div>
 
         <div className="form-card">
-          <h3>Request your free quote</h3>
+          <h3>Request a quote</h3>
           <p>Takes about 60 seconds. We'll call you within one business day.</p>
 
           <form onSubmit={handleSubmit} noValidate>
@@ -145,7 +145,7 @@ export default function Estimate() {
             >
               {sent ? "✓ Request Sent — We'll Call You Soon"
                : sending ? 'Sending…'
-               : 'Request My Free Quote'}
+               : 'Request My Quote'}
             </button>
             <p className="form-status" aria-live="polite">
               {sent ? 'Your email app should open with the request filled in.' : ''}
