@@ -1,14 +1,63 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+const NUMBERED_SLIDES_TO_CHECK = 12;
+
+const loadImage = (src) => new Promise((resolve) => {
+  const image = new Image();
+  image.onload = () => resolve(true);
+  image.onerror = () => resolve(false);
+  image.src = src;
+});
 
 export default function BeforeAfterSlider({
   title = 'Exterior repaint — Siaya County Club',
-  meta  = 'Full prep, caulk, prime & 2 coats · 4 days',
+  meta = 'Full prep, caulk, prime & 2 coats · 4 days',
   beforeImage,
   afterImage,
 }) {
   const [pos, setPos] = useState(52);
   const [dragging, setDragging] = useState(false);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [slides, setSlides] = useState([{ before: beforeImage, after: afterImage }]);
+  const [isVisible, setIsVisible] = useState(false);
   const wrapRef = useRef(null);
+  const showcaseRef = useRef(null);
+
+  useEffect(() => {
+    const numberedSlides = Array.from({ length: NUMBERED_SLIDES_TO_CHECK }, (_, index) => {
+      const number = index + 1;
+      return {
+        before: `/images/before-${number}.jpeg`,
+        after: `/images/after-${number}.jpeg`,
+      };
+    });
+
+    let cancelled = false;
+    Promise.all(numberedSlides.map(async (slide) => (
+      (await Promise.all([loadImage(slide.before), loadImage(slide.after)]).then(([before, after]) => before && after))
+        ? slide
+        : null
+    ))).then((foundSlides) => {
+      if (!cancelled) setSlides([{ before: beforeImage, after: afterImage }, ...foundSlides.filter(Boolean)]);
+    });
+
+    return () => { cancelled = true; };
+  }, [beforeImage, afterImage]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), { threshold: 0.35 });
+    if (showcaseRef.current) observer.observe(showcaseRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible || slides.length < 2) return undefined;
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % slides.length);
+      setPos(52);
+    }, 7000);
+    return () => window.clearInterval(timer);
+  }, [isVisible, slides.length]);
 
   const setFromClientX = (clientX) => {
     const rect = wrapRef.current.getBoundingClientRect();
@@ -17,28 +66,39 @@ export default function BeforeAfterSlider({
     setPos(pct);
   };
 
-  const onPointerDown = (e) => {
+  const onPointerDown = (event) => {
     setDragging(true);
-    wrapRef.current.setPointerCapture(e.pointerId);
-    setFromClientX(e.clientX);
+    wrapRef.current.setPointerCapture(event.pointerId);
+    setFromClientX(event.clientX);
   };
-  const onPointerMove = (e) => dragging && setFromClientX(e.clientX);
-  const onPointerUp    = () => setDragging(false);
+  const onPointerMove = (event) => dragging && setFromClientX(event.clientX);
+  const onPointerUp = () => setDragging(false);
 
-  const onKeyDown = (e) => {
+  const onKeyDown = (event) => {
     let next = pos;
-    if (e.key === 'ArrowLeft')  next = pos - 4;
-    if (e.key === 'ArrowRight') next = pos + 4;
-    if (e.key === 'Home')       next = 2;
-    if (e.key === 'End')        next = 98;
+    if (event.key === 'ArrowLeft') next = pos - 4;
+    if (event.key === 'ArrowRight') next = pos + 4;
+    if (event.key === 'Home') next = 2;
+    if (event.key === 'End') next = 98;
     if (next !== pos) {
-      e.preventDefault();
+      event.preventDefault();
       setPos(Math.max(2, Math.min(98, next)));
     }
   };
 
+  const showNext = () => {
+    setActiveSlide((current) => (current + 1) % slides.length);
+    setPos(52);
+  };
+  const currentSlide = slides[activeSlide] || slides[0];
+
   return (
-    <div className="ba-wrap">
+    <div className="ba-wrap" ref={showcaseRef}>
+      <div className="ba-showcase-head">
+        <span className="eyebrow">See the difference</span>
+        <strong>Swipe through our work</strong>
+      </div>
+
       <div className="ba-card">
         <div
           className="ba"
@@ -50,14 +110,10 @@ export default function BeforeAfterSlider({
           onPointerCancel={onPointerUp}
         >
           <div className="ba-layer ba-after">
-            {afterImage
-              ? <img src={afterImage} alt="After" className="ba-img" />
-              : <><div className="ba-floor" /><div className="ba-base" /></>}
+            <img key={currentSlide.after} src={currentSlide.after} alt={`${title} after`} className="ba-img" />
           </div>
           <div className="ba-layer ba-before">
-            {beforeImage
-              ? <img src={beforeImage} alt="Before" className="ba-img" />
-              : <><div className="ba-floor" /><div className="ba-base" /></>}
+            <img key={currentSlide.before} src={currentSlide.before} alt={`${title} before`} className="ba-img" />
           </div>
 
           <span className="ba-tag ba-tag--l">Before</span>
@@ -83,23 +139,20 @@ export default function BeforeAfterSlider({
           <div className="ba-caption">
             <div>
               <strong>{title}</strong>
-              <span>{meta}</span>
+              <span>{meta} · Drag to compare</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="ba-float">
-        <div>
-          <div className="stars" aria-hidden="true">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <svg key={i} viewBox="0 0 24 24">
-                <path d="M12 2l3 6.6 7 .9-5 4.8 1.2 7L12 18l-6.2 3.3L7 14.3l-5-4.8 7-.9z" />
-              </svg>
-            ))}
-          </div>
-          <div className="lbl" style={{ marginTop: 4 }}>4.9 · 380 reviews</div>
-        </div>
+      <div className="ba-controls">
+        <span>{slides.length > 1 ? `Project ${activeSlide + 1} of ${slides.length}` : 'Featured project'}</span>
+        <button type="button" className="ba-next" onClick={showNext} aria-label="Show next project">
+          Next project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </button>
       </div>
     </div>
   );
