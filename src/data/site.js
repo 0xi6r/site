@@ -1,0 +1,15 @@
+export const site = {
+  brandPrimary: 'ICEARK',
+  brandSecondary: 'Enterprises',
+  fullName: 'ICEARK Enterprises',
+  tagline: 'Professional Painting Contractors',
+  phone: '+254 723702143',
+  phoneHref: 'tel:+254723702143',
+  email: 'iceosphere@gmail.com',
+  emailHref: 'mailto:iceosphere@gmail.com',
+  hours: 'Sun–Fri · 7:00am – 6:00pm',
+  address: 'Nairobi, Kenya',
+  serviceArea: 'Kenya & ALL counties',
+  established: '2008',
+  license: 'Licensed & Fully Insured',
+};
