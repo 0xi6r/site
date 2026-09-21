@@ -11,9 +11,9 @@ export default function Estimate() {
     if (!e.currentTarget.checkValidity()) { e.currentTarget.reportValidity(); return; }
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
-    const subject = encodeURIComponent(`Quote request from ${data.name}`);
+    const subject = encodeURIComponent(`Project quote request from ${data.name}`);
     const body = encodeURIComponent([
-      'New painting quote request',
+      'New ICEARK project quote request',
       '',
       `Name: ${data.name}`,
       `Phone: ${data.phone}`,
@@ -42,20 +42,21 @@ export default function Estimate() {
       <div className="container estimate-grid">
         <div>
           <span className="eyebrow">Get quote</span>
-          <h2 style={{ marginTop: '.8rem' }}>Get a written quote in 24 hours</h2>
+          <h2 style={{ marginTop: '.8rem' }}>Request a project quote</h2>
           <p className="estimate-lead">
-            Tell us about your project and we'll schedule a free on-site visit.
-            No pressure, no pushy sales — just an honest, itemized number.
+            Tell us what you need done and we'll review the scope, advise on the right finish,
+            and prepare a practical quote for your project.
           </p>
 
           <ul className="estimate-points">
-            <li><IconCheck /> Share the space, surface condition, and timing you have in mind.</li>
-            <li><IconCheck /> Send photos on WhatsApp for a faster first read.</li>
-            <li><IconCheck /> We confirm scope, prep needs, schedule, and your written quote.</li>
+            <li><IconCheck /> Share the space, service needed, site condition, and timeline.</li>
+            <li><IconCheck /> Send photos or drawings on WhatsApp for a faster first review.</li>
+            <li><IconCheck /> We confirm scope, preparation needs, schedule, and quote details.</li>
           </ul>
 
           <div className="estimate-contact">
             <a href={site.phoneHref}><IconPhone /> {site.phone}</a>
+            <a href={site.altPhoneHref}><IconPhone /> {site.altPhone}</a>
             <a href={site.whatsappHref} target="_blank" rel="noreferrer"><IconWhatsApp /> Chat on WhatsApp</a>
             <a href={site.emailHref}><IconMail /> {site.email}</a>
             <a href="#"><IconClock /> {site.hours}</a>
@@ -94,7 +95,7 @@ export default function Estimate() {
 
             <div className="field">
               <label htmlFor="address">Property address / city</label>
-              <input id="address" name="address" type="text" placeholder="123 Main St, Nairobi" />
+                <input id="address" name="address" type="text" placeholder="Kisumu, Nairobi, or project location" />
             </div>
 
             <div className="form-row">
@@ -102,12 +103,13 @@ export default function Estimate() {
                 <label htmlFor="service">Service needed <span className="req">*</span></label>
                 <select id="service" name="service" required defaultValue="">
                   <option value="" disabled>Select a service…</option>
-                  <option>Interior painting</option>
-                  <option>Exterior painting</option>
-                  <option>Commercial painting</option>
-                  <option>Cabinet refinishing</option>
-                  <option>Drywall repair &amp; prep</option>
-                  <option>Deck / fence staining</option>
+                  <option>Painting &amp; decoration</option>
+                  <option>Special effects application</option>
+                  <option>Epoxy flooring</option>
+                  <option>Glazing</option>
+                  <option>Gypsum works</option>
+                  <option>Tiling &amp; fittings</option>
+                  <option>Multiple services</option>
                   <option>Not sure yet</option>
                 </select>
               </div>
@@ -128,7 +130,7 @@ export default function Estimate() {
               <textarea
                 id="details"
                 name="details"
-                placeholder="e.g. 3 bedrooms, hallway and stairwell. You can also send photos on WhatsApp after submitting."
+                placeholder="e.g. office repaint and gypsum ceiling, residential epoxy flooring, tiling and fittings, or full interior finish works."
               />
             </div>
 
@@ -150,7 +152,7 @@ export default function Estimate() {
             <p className="form-status" aria-live="polite">
               {sent ? 'Your email app should open with the request filled in.' : ''}
             </p>
-            <p className="form-note">🔒 Your information is safe. No spam, ever.</p>
+            <p className="form-note">Your information is safe. No spam, ever.</p>
           </form>
         </div>
       </div>

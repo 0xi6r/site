@@ -5,10 +5,10 @@ export default function TrustStrip() {
     <div className="trust">
       <div className="container">
         <ul className="trust-in">
-          <li><IconShield /> Fully licensed &amp; insured</li>
-          <li><IconClock /> On-time, on-budget</li>
-          <li><IconCheck /> 5-year workmanship warranty</li>
-          <li><IconBuilding /> Residential &amp; commercial</li>
+          <li><IconShield /> Registered since 2010</li>
+          <li><IconClock /> Professional advice before execution</li>
+          <li><IconCheck /> Quality, integrity &amp; accountability</li>
+          <li><IconBuilding /> Residential, commercial &amp; institutional</li>
         </ul>
       </div>
     </div>

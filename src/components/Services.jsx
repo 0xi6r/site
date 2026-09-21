@@ -7,8 +7,8 @@ export default function Services() {
       <div className="container">
         <div className="section-head section-head--center">
           <span className="eyebrow">What we do</span>
-          <h2 style={{ marginTop: '.8rem' }}>Painting services for every surface</h2>
-          <p>From a single room refresh to a full commercial repaint — same crew, same prep standards, same clean finish.</p>
+          <h2 style={{ marginTop: '.8rem' }}>Building finishes from paint to fittings</h2>
+          <p>From decorative wall finishes to epoxy floors, gypsum, glazing, tiling, and fittings, we bring one quality standard to every site.</p>
         </div>
 
         <div className="services-grid">

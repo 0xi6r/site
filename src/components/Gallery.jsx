@@ -4,10 +4,11 @@ import { IconPin, IconClock } from './Icons';
 
 const FILTERS = [
   { key: 'all',        label: 'All Projects' },
-  { key: 'interior',   label: 'Interior' },
-  { key: 'exterior',   label: 'Exterior' },
+  { key: 'painting',   label: 'Painting' },
+  { key: 'residential', label: 'Residential' },
   { key: 'commercial', label: 'Commercial' },
-  { key: 'cabinets',   label: 'Cabinets' },
+  { key: 'tiling',     label: 'Tiling' },
+  { key: 'gypsum',     label: 'Gypsum' },
 ];
 
 const PLACEHOLDER_STYLES = [
@@ -27,8 +28,8 @@ export default function Gallery() {
       <div className="container">
         <div className="section-head">
           <span className="eyebrow">Recent projects</span>
-          <h2 style={{ marginTop: '.8rem' }}>Real jobs, real results</h2>
-          <p>A sample of recent work. Every project gets the same prep-first approach.</p>
+          <h2 style={{ marginTop: '.8rem' }}>Work across commercial and residential spaces</h2>
+          <p>A sample of the markets ICEARK serves, from offices and hospitality spaces to homes and interior fit-outs.</p>
         </div>
 
         <div className="filters">

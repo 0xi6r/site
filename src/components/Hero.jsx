@@ -11,11 +11,12 @@ export default function Hero() {
             Serving {site.serviceArea} since {site.established}
           </span>
           <h1>
-            Painting that makes your property look <span className="hl">newly built</span>.
+            Building finishes crafted for <span className="hl">lasting impact</span>.
           </h1>
           <p className="hero-lead">
-            Interior, exterior, and commercial painting for homes and businesses.
-            Proper prep, clean job sites, and a finish that still looks sharp years later.
+            ICEARK Enterprises delivers painting, decoration, special effects, epoxy flooring,
+            glazing, gypsum, tiling, and fittings for residential, commercial, institutional,
+            and industrial projects.
           </p>
 
           <div className="hero-cta">
@@ -27,17 +28,17 @@ export default function Hero() {
           </div>
 
           <ul className="hero-badges">
-            <li><IconCheck /> Licensed</li>
-            <li><IconCheck /> 20+ years experience</li>
-            <li><IconCheck /> 5-year workmanship warranty</li>
+            <li><IconCheck /> Registered Kenyan-owned firm</li>
+            <li><IconCheck /> Founded 17 March 2010</li>
+            <li><IconCheck /> Quality, safety & accountability</li>
           </ul>
         </div>
 
         <BeforeAfterSlider
           beforeImage="/images/before.jpg"
           afterImage="/images/after.jpg"
-          title="Exterior repaint — Siaya County Club"
-          meta="Full prep, caulk, prime & 2 coats · 4 days"
+          title="Exterior finish — Siaya County Club"
+          meta="Preparation, coating, detailing & final clean-up"
         />
       </div>
     </section>

@@ -88,6 +88,39 @@ export const serviceIcons = {
       <path d="M4 20h6" />
     </svg>
   ),
+  special: (p) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <path d="M4 20c4-7 9-7 16-16" />
+      <path d="M5 5l1.2 2.6L9 8.8l-2.8 1.1L5 12.5l-1.2-2.6L1 8.8l2.8-1.2z" />
+      <path d="M17 13l.9 2 2.1.8-2.1.8-.9 2-.9-2-2.1-.8 2.1-.8z" />
+    </svg>
+  ),
+  epoxy: (p) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <path d="M3 17h18" />
+      <path d="M5 17l3-9h8l3 9" />
+      <path d="M7 13h10M8.2 9.5h7.6" />
+      <path d="M4 21h16" />
+    </svg>
+  ),
+  glazing: (p) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <rect x="4" y="3" width="16" height="18" rx="1.5" />
+      <path d="M12 3v18M4 12h16M8 8l2-2M14 18l2-2" />
+    </svg>
+  ),
+  gypsum: (p) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <path d="M4 5h16v5H4z" />
+      <path d="M7 10v9h10v-9" />
+      <path d="M9.5 14h5M9.5 17h5" />
+    </svg>
+  ),
+  tiling: (p) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" />
+    </svg>
+  ),
   commercial: (p) => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" {...p}>
       <rect x="3.5" y="3" width="10" height="18" rx="1.2" />

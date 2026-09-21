@@ -1,5 +1,5 @@
 export const areas = [
-  'Nairobi', 'Mombasa', 'Kisumu', 'Nakuru', 'Eldoret',
-  'Siaya', 'Kakamega', 'Nyeri', 'Machakos', 'Thika',
-  'Naivasha', 'Karen',
+  'Kisumu', 'Nairobi', 'Mombasa', 'Nakuru', 'Eldoret',
+  'Siaya', 'Kakamega', 'Kisii', 'Kericho', 'Homabay',
+  'Machakos', 'Kenya-wide projects',
 ];

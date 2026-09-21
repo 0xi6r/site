@@ -1,26 +1,26 @@
 export const faqs = [
   {
-    q: 'How much does painting cost?',
-    a: 'Most interior rooms run KES 25,000–KES 60,000 including materials, depending on size, ceiling height and prep work. Exteriors typically range from KES 180,000 to KES 800,000. We give you a written, itemized quote after a free on-site visit — no vague ballpark numbers.',
+    q: 'What services does ICEARK Enterprises offer?',
+    a: 'We handle professional interior and exterior work across painting and decoration, special effects application, epoxy flooring, glazing, gypsum, tiling, and fittings.',
   },
   {
-    q: 'Are you licensed and insured?',
-    a: 'Yes. We hold a current contractor license, carry general liability and full workers\' compensation coverage, and can provide certificates before work begins.',
+    q: 'When was ICEARK Enterprises established?',
+    a: 'ICEARK Enterprises was founded and registered on 17 March 2010 as a Kenyan-owned firm operating in the building and construction industry.',
   },
   {
-    q: 'How long will my project take?',
-    a: 'A single room is usually one day. A full interior takes 4–8 days. Exteriors run 3–7 days depending on size and weather. Commercial work is scheduled around your operating hours, including nights and weekends.',
+    q: 'What types of clients do you work with?',
+    a: 'Our target market includes commercial office buildings, apartments, hotels, hospitals, industrial warehousing, schools, colleges, libraries, retail shops, and residential houses.',
   },
   {
-    q: 'Do you help with color selection?',
-    a: "Absolutely — it's included. We bring large color samples to your home so you can see them in your actual lighting, and we'll advise on sheen and finish for each surface.",
+    q: 'Do you give professional advice before work begins?',
+    a: 'Yes. Professionalism is one of our core values, so we advise clients on the scope, requirements, execution approach, and expected finish before service is rendered.',
   },
   {
-    q: 'What paint brands do you use?',
-    a: "We use premium, weather-tested brands as standard. If you have a preferred product, we're happy to use it.",
+    q: 'How do you approach quality and safety?',
+    a: 'We aim for an outstanding finish while taking responsibility for proper use and care of materials, equipment, substances, site visitors, clients, workers, and waste generated during our activities.',
   },
   {
-    q: 'Do you offer a warranty?',
-    a: "Every project comes with a 5-year workmanship warranty on top of the manufacturer's paint warranty. If a defect appears that's related to our prep or application, we come back and fix it at no cost.",
+    q: 'Where do you work?',
+    a: 'ICEARK is based in Kisumu and serves clients across Kenya and beyond depending on project scope.',
   },
 ];

@@ -15,8 +15,8 @@ export default function Footer() {
               </span>
             </a>
             <p className="footer-about">
-              Family-owned painting contractor serving {site.address} and surrounding communities since {site.established}.
-              Interior, exterior and commercial painting done properly the first time.
+              Kenyan-owned building and construction firm serving {site.serviceArea} since {site.established}.
+              Painting, decoration, epoxy flooring, glazing, gypsum, tiling, and fittings done with professional care.
             </p>
           </div>
 
@@ -24,11 +24,11 @@ export default function Footer() {
             <h4>Services</h4>
             <ul className="footer-links">
               <li><a href="#services">Interior Painting</a></li>
-              <li><a href="#services">Exterior Painting</a></li>
-              <li><a href="#services">Commercial Painting</a></li>
-              <li><a href="#services">Cabinet Refinishing</a></li>
-              <li><a href="#services">Drywall Repair</a></li>
-              <li><a href="#services">Deck &amp; Fence Staining</a></li>
+              <li><a href="#services">Special Effects</a></li>
+              <li><a href="#services">Epoxy Flooring</a></li>
+              <li><a href="#services">Glazing Works</a></li>
+              <li><a href="#services">Gypsum Works</a></li>
+              <li><a href="#services">Tiling &amp; Fittings</a></li>
             </ul>
           </div>
 
@@ -47,9 +47,11 @@ export default function Footer() {
             <h4>Get in touch</h4>
             <ul className="footer-contact">
               <li><IconPhone /><a href={site.phoneHref}>{site.phone}</a></li>
+              <li><IconPhone /><a href={site.altPhoneHref}>{site.altPhone}</a></li>
               <li><IconWhatsApp /><a href={site.whatsappHref} target="_blank" rel="noreferrer">Chat on WhatsApp</a></li>
               <li><IconMail /><a href={site.emailHref}>{site.email}</a></li>
               <li><IconPin /><span>{site.address}</span></li>
+              <li><IconPin /><span>{site.postal}</span></li>
               <li><IconClock /><span>{site.hours}</span></li>
               <li><IconShield /><span>{site.license}</span></li>
             </ul>

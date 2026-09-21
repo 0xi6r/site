@@ -1,7 +1,7 @@
 const STATS = [
-  { num: '2,400+', lbl: 'Projects completed' },
-  { num: '20+',    lbl: 'Years in business' },
-  { num: '5 yr',   lbl: 'Workmanship warranty' },
+  { num: '2010', lbl: 'Founded & registered' },
+  { num: '6',    lbl: 'Core finish services' },
+  { num: 'Kenya', lbl: 'Projects countrywide' },
 ];
 
 export default function Stats() {
