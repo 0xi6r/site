@@ -1,4 +1,34 @@
 export const projects = [
+  {
+  id: 3, 
+  cat: 'Exterior Painting, Special Effects & Glazing', 
+  badge: 'residential', 
+  title: 'Luxury Two-Story Residence - Exterior Finishing & Decorative Cladding', 
+  location: 'Kenya', 
+  duration: '6 months', 
+  image: '/images/luxury_residence.jpeg', 
+  result: 'Successfully completed comprehensive exterior painting and decoration, featuring a pristine cream and white color scheme. Executed precise special effects application through high-quality textured stone cladding on the feature walls. Completed premium glazing and fittings for the large, multi-pane windows and wooden frames. Delivered a polished finish for the grand entrance columns and exterior lighting fixtures.'
+  },
+  {
+  id: 4, 
+  cat: 'Exterior Painting, Special Effects & Fittings', 
+  badge: 'residential', 
+  title: 'Two-Story Residence - Exterior Finishing & Decorative Stone Cladding', 
+  location: 'Kenya', 
+  duration: '5 months', 
+  image: '/images/residential_grey.jpeg', 
+  result: 'Successfully completed the exterior painting and decoration of a two-story home, featuring a sleek grey and white color scheme. Executed precise special effects application through detailed decorative stone cladding and textured wall finishes. Completed the fittings and installation of intricate white metal security grilles, balcony railings, and window units.'
+  },
+  {
+  id: 5, 
+  cat: 'Exterior Painting', 
+  badge: 'residential', 
+  title: 'Modern Two-Story Home - Exterior Finishing & Special Effects', 
+  location: 'Kenya', 
+  duration: '4 months', 
+  image: '/image/residential_yellow.jpg', 
+  result: 'Successfully completed the exterior painting and decoration of a modern two-story home, featuring a striking yellow and brown color scheme with contrasting trim. Executed precise special effects application through detailed stone cladding on the lower facade and structural columns. Completed professional glazing and fittings for the large windows, sliding doors, and metal security grilles, delivering a durable and vibrant finish.'
+  },
   { id: 6, cat: 'commercial', badge: 'Commercial', title: 'I.P.L. Plaza Finishes', location: 'Oginga Odinga Street, Kisumu', duration: 'Commercial works', image: '/images/ipl_plaza.png', result: 'Building finish works delivered for a high-traffic commercial office environment.' },
   { id: 7, cat: 'residential', badge: 'Painting', title: 'Exterior painting', location: 'Kisumu', duration: '3 Days', image: '/images/bangalow-exterior-paint.jpg', result: 'Complete exterior transformation of a residential bungalow in Kisumu. We applied a vibrant, weather-resistant pink finish, ensuring smooth coverage and precise edging to enhance the home\'s curb appeal.' },
   { id: 8, cat: 'gypsum', badge: 'Gypsum & Fittings', title: 'Modern Feature Wall & Paneling', location: 'Kisumu', duration: '2 weeks', image: '/images/modern-tv-wall-paneling.jpg', result: 'Gypsum installation and wall profiling to create a seamless, recessed feature wall. Finished with integrated dark wood paneling and a custom media console for a sleek, high-end residential look.' },
@@ -101,7 +131,16 @@ export const projects = [
   duration: '4 months', 
   image: '/images/siaya_club.png', 
   result: 'Successfully completed comprehensive exterior painting and decoration for the Siaya County Club, featuring a clean cream and dark brown color scheme. Executed professional glazing and fittings for the prominent glass tower, balconies, and all building windows. Completed exterior tiling and paving for the expansive driveway, walkways, and landscaped grounds, delivering a polished, modern finish suitable for a premier hospitality and recreational venue.'
-  }
-
+  },
+  {
+  id: 20, 
+  cat: 'Gypsum & Interior Painting', 
+  badge: 'residential', 
+  title: 'Modern Multi-Layered Gypsum Ceiling Design', 
+  location: 'Kenya', 
+  duration: '2 weeks', 
+  image: '/images/interior_ceiling.jpeg', 
+  result: 'Successfully completed the intricate installation of a multi-layered gypsum ceiling, featuring a modern geometric and circular tiered design. Executed precise interior painting and decoration with contrasting white and brown accent finishes, alongside the fittings of recessed LED downlights to create a striking ambient lighting effect.'
+  },
 
 ];
