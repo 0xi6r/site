@@ -1,4 +1,3 @@
-```js
 export const projects = [
   {
     id: 3,
@@ -204,4 +203,3 @@ export const projects = [
       'Crafted a multi-layered gypsum ceiling featuring a modern geometric and circular tiered design. Applied detailed interior painting and decoration with contrasting white and brown accents, complemented by recessed LED downlights to create a distinctive ambient lighting effect.'
   }
 ];
-```
