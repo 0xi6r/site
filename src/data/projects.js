@@ -3,36 +3,36 @@ export const projects = [
     id: 3,
     cat: 'Exterior Painting, Special Effects & Glazing',
     badge: 'residential',
-    title: 'Luxury Two-Story Residence - Exterior Finishing & Decorative Cladding',
+    title: 'Luxury One-Story Residence - Exterior Finishing & Decorative Cladding',
     location: 'Kenya',
     duration: '6 months',
     image: '/images/luxury_residence.jpg',
     result:
-      'Delivered comprehensive exterior painting and decorative finishing for a luxury two-story residence, featuring a pristine cream and white colour scheme. Applied high-quality textured stone cladding to feature walls and structural elements, complemented by premium glazing and fittings for the large multi-pane windows and wooden frames. The grand entrance columns and exterior lighting fixtures were also finished to a polished standard.'
+      'Delivered comprehensive exterior painting and decorative finishing for a luxury one-story residence, featuring a pristine cream and white colour scheme. Applied high-quality textured stone cladding to feature walls and structural elements, complemented by premium glazing and fittings for the large multi-pane windows and wooden frames. The grand entrance columns and exterior lighting fixtures were also finished to a polished standard.'
   },
 
   {
     id: 4,
     cat: 'Exterior Painting, Special Effects & Fittings',
     badge: 'residential',
-    title: 'Two-Story Residence - Exterior Finishing & Decorative Stone Cladding',
+    title: 'One-Story Residence - Exterior Finishing & Decorative Stone Cladding',
     location: 'Kenya',
     duration: '5 months',
     image: '/images/residential_grey.jpeg',
     result:
-      'Executed the exterior painting and decoration of a two-story residence in a sleek grey and white colour scheme. Introduced detailed decorative stone cladding and textured wall finishes to create distinctive feature areas. The works also covered the installation of white metal security grilles, balcony railings, and window units.'
+      'Executed the exterior painting and decoration of a one-story residence in a sleek grey and white colour scheme. Introduced detailed decorative stone cladding and textured wall finishes to create distinctive feature areas. The works also covered the installation of white metal security grilles, balcony railings, and window units.'
   },
 
   {
     id: 5,
     cat: 'Exterior Painting',
     badge: 'residential',
-    title: 'Modern Two-Story Home - Exterior Finishing & Special Effects',
+    title: 'Modern one-Story Home - Exterior Finishing & Special Effects',
     location: 'Kenya',
     duration: '4 months',
     image: '/images/residential_yellow.jpeg',
     result:
-      'Transformed the exterior of a modern two-story home with a striking yellow and brown colour scheme and contrasting trim. Applied decorative stone cladding to the lower facade and structural columns as part of the special effects finish. Professional glazing and fittings were also carried out for the large windows, sliding doors, and metal security grilles.'
+      'Transformed the exterior of a modern one-story home with a striking yellow and brown colour scheme and contrasting trim. Applied decorative stone cladding to the lower facade and structural columns as part of the special effects finish. Professional glazing and fittings were also carried out for the large windows, sliding doors, and metal security grilles.'
   },
 
   {
@@ -92,7 +92,7 @@ export const projects = [
     duration: '2 months',
     image: '/images/rusinga.png',
     result:
-      'Undertook exterior painting and decorative finishing for a modern two-story residence, incorporating stone cladding and detailed eaves finishing. Installed premium glazing for the bay and arched windows, alongside general fittings and fixtures to complete the modern residential build.'
+      'Undertook exterior painting and decorative finishing for a modern one-story residence, incorporating stone cladding and detailed eaves finishing. Installed premium glazing for the bay and arched windows, alongside general fittings and fixtures to complete the modern residential build.'
   },
 
   {
@@ -135,7 +135,7 @@ export const projects = [
     id: 15,
     cat: 'Exterior Painting & Special Effects',
     badge: 'residential',
-    title: 'Two-Story Residential Home - Exterior Finishing & Stone Cladding',
+    title: 'One-Story Residential Home - Exterior Finishing & Stone Cladding',
     location: 'New Kitisuru Estate',
     duration: '4 months',
     image: '/images/kitisuru.png',
