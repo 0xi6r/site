@@ -16,7 +16,27 @@ export const projects = [
   duration: '1 week', 
   image: '/images/airtel.png', 
   result: 'Successfully completed the painting and installation of branded Airtel customer care and agent counters, featuring red and white corporate identity and vinyl wall graphics.'
-}
+  },
+  {
+  id: 10, 
+  cat: 'Residential Painting & Glazing', 
+  badge: 'residential', 
+  title: 'Modern Two-Story Home - Exterior Finishing & Glazing', 
+  location: 'Rusinga Island', 
+  duration: '2 months', 
+  image: '/images/rusinga.png', 
+  result: 'Completed exterior painting and decoration, including stone cladding finishes and eaves. Installed premium glazing for the bay and arched windows, alongside general fittings and fixtures to finish the modern residential build.'
+},
+{
+  id: 11, 
+  cat: 'Gypsum & Interior Finishing', 
+  badge: 'residential', 
+  title: 'Modern Interior Gypsum Ceiling & Painting', 
+  location: 'Rusinga Island', 
+  duration: '3 weeks', 
+  image: '/images/rusinga1.png', 
+  result: 'Completed intricate gypsum ceiling design and installation featuring recessed lighting panels and cornices. Executed full interior painting and decoration, alongside the fittings of structural columns, windows, and doors to achieve a clean, modern white finish.'
+},
 
 
 ];
