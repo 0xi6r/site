@@ -26,17 +26,27 @@ export const projects = [
   duration: '2 months', 
   image: '/images/rusinga.png', 
   result: 'Completed exterior painting and decoration, including stone cladding finishes and eaves. Installed premium glazing for the bay and arched windows, alongside general fittings and fixtures to finish the modern residential build.'
-},
-{
-  id: 11, 
-  cat: 'Gypsum & Interior Finishing', 
+  },
+  {
+    id: 11, 
+    cat: 'Gypsum & Interior Finishing', 
+    badge: 'residential', 
+    title: 'Modern Interior Gypsum Ceiling & Painting', 
+    location: 'Rusinga Island', 
+    duration: '3 weeks', 
+    image: '/images/rusinga1.png', 
+    result: 'Completed intricate gypsum ceiling design and installation featuring recessed lighting panels and cornices. Executed full interior painting and decoration, alongside the fittings of structural columns, windows, and doors to achieve a clean, modern white finish.'
+  },
+  {
+  id: 12, 
+  cat: 'Glazing & Fittings', 
   badge: 'residential', 
-  title: 'Modern Interior Gypsum Ceiling & Painting', 
-  location: 'Rusinga Island', 
-  duration: '3 weeks', 
-  image: '/images/rusinga1.png', 
-  result: 'Completed intricate gypsum ceiling design and installation featuring recessed lighting panels and cornices. Executed full interior painting and decoration, alongside the fittings of structural columns, windows, and doors to achieve a clean, modern white finish.'
-},
+  title: 'Residential Glazing & Window Installation', 
+  location: 'Maseno', 
+  duration: '2 weeks', 
+  image: '/images/glazing-maseno0.jpeg', 
+  result: 'Successfully completed professional glazing and fittings for large residential glass doors and windows. Executed precise installation of glass panes, window frames, and security grilles, complemented by exterior painting and decoration on the window surrounds.'
+  },
 
 
 ];
