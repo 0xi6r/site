@@ -84,7 +84,7 @@ export const projects = [
   title: 'Amalia Apartment - Multi-Story Exterior Finishing', 
   location: 'Gatundu Road, Nairobi', 
   duration: '8 months', 
-  image: '/image/amalia.png', 
+  image: '/images/amalia.png', 
   result: 'Successfully completed large-scale exterior painting and decoration for the Amalia Apartment complex, featuring a smooth cream finish with dark contrasting accents. Executed comprehensive glazing and fittings for all window units, including the installation of balcony railings and structural trims. Delivered a polished, modern facade for the high-rise residential development.'
   },
   {
