@@ -6,7 +6,7 @@ export const projects = [
   title: 'Luxury Two-Story Residence - Exterior Finishing & Decorative Cladding', 
   location: 'Kenya', 
   duration: '6 months', 
-  image: '/images/luxury_residence.jpeg', 
+  image: '/images/luxury_residence.jpg', 
   result: 'Successfully completed comprehensive exterior painting and decoration, featuring a pristine cream and white color scheme. Executed precise special effects application through high-quality textured stone cladding on the feature walls. Completed premium glazing and fittings for the large, multi-pane windows and wooden frames. Delivered a polished finish for the grand entrance columns and exterior lighting fixtures.'
   },
   {
@@ -26,7 +26,7 @@ export const projects = [
   title: 'Modern Two-Story Home - Exterior Finishing & Special Effects', 
   location: 'Kenya', 
   duration: '4 months', 
-  image: '/image/residential_yellow.jpg', 
+  image: '/image/residential_yellow.jpeg', 
   result: 'Successfully completed the exterior painting and decoration of a modern two-story home, featuring a striking yellow and brown color scheme with contrasting trim. Executed precise special effects application through detailed stone cladding on the lower facade and structural columns. Completed professional glazing and fittings for the large windows, sliding doors, and metal security grilles, delivering a durable and vibrant finish.'
   },
   { id: 6, cat: 'commercial', badge: 'Commercial', title: 'I.P.L. Plaza Finishes', location: 'Oginga Odinga Street, Kisumu', duration: 'Commercial works', image: '/images/ipl_plaza.png', result: 'Building finish works delivered for a high-traffic commercial office environment.' },
